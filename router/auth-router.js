@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
 
-router.get('/', (req, res) => {
-    res.status(200).send("Home Page")
-})
+// Controllers
+const authControllers = require('../controllers/auth-controllers')
 
-router.get('/register', (req, res) => {
-    res.status(200).send("register Page")
-})
+
+router.route('/').get(authControllers.home)
+
+router.route('/register').get(authControllers.register)
 
 module.exports = router;
