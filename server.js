@@ -2,10 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const authRouter = require('./router/auth-router')
 
-app.get('/', (req, res) => {
-    res.status(200).send('Hello World!')
-})
+app.use(authRouter)
+
 
 
 app.listen(port, () => {
